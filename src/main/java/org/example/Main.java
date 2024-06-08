@@ -22,7 +22,7 @@ public class Main {
         }
     }
     public static void main(String[] args) throws InterruptedException {
-        fillArr(4);
+        fillArr(10);
         startAll();
         System.out.println("Finished all");
 

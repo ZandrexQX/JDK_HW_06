@@ -11,9 +11,16 @@ public class People {
     }
 
     public boolean choicePeople(){
-        int choice = r.nextInt(3)+1;
-        f.firstChoice(choice);
-        return f.choiceDoor(choice);
+        int first = r.nextInt(3)+1;
+        f.firstChoice(first);
+        System.out.println("В первый раз выбрал дверь: " + first);
+        int second = r.nextInt(3)+1;
+        while (second == f.getOpenDoor()){
+            second = r.nextInt(3)+1;
+        }
+        System.out.println("Вo второй раз выбрал дверь: " + second);
+
+        return f.choiceDoor(second);
     }
 
 }

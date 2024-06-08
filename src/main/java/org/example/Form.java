@@ -17,4 +17,13 @@ public class Form {
         this.door2 = new Door(r.nextBoolean());
         this.door3 = new Door(true);
     }
+
+    public boolean choiceDoor(int choice){
+        return switch (choice){
+            case 1 -> door1.isWin();
+            case 2 -> door2.isWin();
+            case 3 -> door3.isWin();
+            default -> false;
+        };
+    }
 }

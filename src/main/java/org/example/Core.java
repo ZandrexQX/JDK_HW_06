@@ -36,6 +36,11 @@ public class Core extends Thread{
     }
 
     public static void printResult(){
-        System.out.println(result);
+        for (int key: result.keySet()){
+            System.out.print(STR."\{key} -> \{result.get(key)}; \t");
+            if (key % 10 == 0){
+                System.out.println();
+            }
+        }
     }
 }

@@ -1,7 +1,9 @@
 package org.example;
 
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 @Getter
 public class Door {
     private boolean isWin;

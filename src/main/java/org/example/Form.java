@@ -47,6 +47,5 @@ public class Form {
             }
             default -> throw new RuntimeException("Error in first choice");
         }
-        System.out.println(STR."Открылась дверь: \{this.openDoor}. В ней \{choiceDoor(openDoor)}");
     }
 }

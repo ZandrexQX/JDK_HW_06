@@ -1,15 +1,31 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
-    static void startAll(){
-        for (int i = 0; i < 10; i++) {
-            Core c = new Core();
-            c.start();
+
+    static List<Core> cores = new ArrayList<>();
+
+    static void fillArr(int count){
+        for (int i = 0; i < count; i++) {
+            cores.add(new Core());
         }
     }
-    public static void main(String[] args) {
+
+    static void startAll() throws InterruptedException {
+        for (Core c: cores) {
+            c.start();
+        }
+        for (Core c: cores){
+            c.join();
+        }
+    }
+    public static void main(String[] args) throws InterruptedException {
+        fillArr(4);
         startAll();
-        System.out.println("_______");
+        System.out.println("Finished all");
+
         Core.printResult();
     }
 }

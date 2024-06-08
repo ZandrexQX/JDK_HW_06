@@ -32,7 +32,6 @@ public class Core extends Thread{
     }
     public synchronized void putResult(boolean res){
         int k = key.incrementAndGet();
-        System.out.println(k + " " + res);
         result.put(k, res);
     }
 
